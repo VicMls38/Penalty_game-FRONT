@@ -167,10 +167,12 @@
     height: 50%;
     position: relative;
     top: -150%;
+    z-index: 11;
   }
   .restartText{
     position: relative;
     top: -160%;
+    z-index: 11;
   }
 
   .cage{
