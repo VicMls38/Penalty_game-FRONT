@@ -1,0 +1,210 @@
+@keyframes anim-gardien-left {
+  0% {
+      transform: translateX(0);
+  }
+  50% { transform: translateX(-180px);}
+  100% {
+      transform: translateX(0); /* Ajustez la valeur selon vos besoins */
+  }
+}
+
+@keyframes anim-gardien-right {
+  0% {
+      transform: translateX(0);
+  }
+  50% { transform: translateX(180px);}
+  100% {
+      transform: translateX(0); /* Ajustez la valeur selon vos besoins */
+  }
+}
+
+
+
+@keyframes anim-tireur-left {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    background-size: 40%;
+    left: 30%;
+    transform: translateY(-180px);
+  }
+  100% {
+    background-size: 20%;
+    left: 40%;
+    transform: translateY(-250px);
+  }
+}
+@keyframes anim-tireur-right {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    background-size: 40%;
+    left: 70%;
+    transform: translateY(-180px);
+  }
+  100% {
+    background-size: 20%;
+    left: 60%;
+    transform: translateY(-250px);
+  }
+}
+@keyframes anim-tireur-middle {
+  0% {
+      left: 45.5%;
+      transform: translateY(0);
+  }
+  100% {
+    left: 45.5%;
+    transform: translateY(-180px);
+  }
+}
+
+.play-page {
+
+  .role{
+    color: black;
+  }
+
+  .Score{
+    width: 100%;
+    height: 10%;
+    background-color: orangered;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    border-bottom: 2vh solid black;
+  }
+
+  .Field{
+    width: 100%;
+    height: 90%;
+    background-color: aquamarine;
+    position: absolute;
+    top: 10%;
+  }
+
+  .textInGame{
+    width: 100%;
+    height: 15%;
+  }
+
+  .restart{
+    width: 20%;
+    height: 50%;
+  }
+
+  .cage{
+    background-size: contain;
+    background-image: url('/cage.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 70%;
+    height: 50%;
+    position: relative;
+    top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .gardien {
+      background-size: contain !important;
+      position: absolute; 
+      left: 25%;
+      top: 30%;
+      width: 50%;
+      height: 55%;
+      z-index: 1;
+      background: url('/gardien.png') no-repeat center center; 
+  }
+  
+
+
+    .gardien-anim-left {
+      animation-name: anim-gardien-left;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+    }
+    .gardien-anim-right {
+      animation-name: anim-gardien-right;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+    }
+
+
+    
+
+    .choixJoueur{
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+      height: 90%;
+      position: absolute;
+      top: 5%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2; 
+
+      a{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 0, 0, 0.122);
+      }
+      a:hover{
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(240, 248, 255, 0.312);
+      }
+    }
+  }
+
+
+  .dirt{
+    width: 100%;
+    height: 20%;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .ballon{
+    background-size: 90%;
+    width: 60px;
+    height: 60px;
+    background-image: url('/ballon.webp');
+    background-repeat: no-repeat;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    top: 25%;
+  }
+  .tireur-anim-left {
+    animation-name: anim-tireur-left;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
+  .tireur-anim-right {
+    animation-name: anim-tireur-right;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
+  .tireur-anim-middle {
+    animation-name: anim-tireur-middle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
+
+}

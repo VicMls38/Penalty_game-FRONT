@@ -1,0 +1,27 @@
+.AccueilScreen {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 70vh;
+    background-color: antiquewhite;
+    
+    display: flex; /* Utiliser Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    
+    h1 {
+        border-radius: 25px;
+        background-color: rgb(255, 191, 0);
+        width: 30%;
+        height: 20vh;
+        position: relative;
+        text-align: center; /* Centrer le texte à l'intérieur de h1 */
+        line-height: 20vh; /* Centrer verticalement le texte */
+        font-size: 50px;
+        color: black;
+    }
+    h1:hover{
+        cursor: pointer;
+        background-color: rgb(255, 232, 115);
+    }
+}
