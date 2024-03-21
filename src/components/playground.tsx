@@ -29,11 +29,11 @@ function Playground() {
     })
 
     socket.on('win', () => {
-      setResultText("Bravo vous avez gagné !!!");
+      setResultText("Gagné !");
       setGameOver(true);
     });
     socket.on('loose', () => {
-      setResultText("Bouuuh vous avez perdu !");
+      setResultText("Perdu !");
       setGameOver(true);
     });
     socket.on('egality', () => {
@@ -73,13 +73,15 @@ function Playground() {
       <div className='textInGame'>
       <h1 className='role'>Vous êtes {role} !</h1>
       {attJoueur !== "" && <h4>En attente du {attJoueur}</h4>}
+      <div className='soleil'></div>
+      <div className='nuages'></div>
       {isGameOver && (
         <>
-          <h1 className='result'>{resultText}</h1>
-          <h4>Restart ? {nbRestart}</h4>
+          <h4 className='restartText'>Restart ? {nbRestart}</h4>
           <button className="restart" onClick={handleRestart}>
             Restart
           </button>
+          <h1 className='result'>{resultText}</h1>
         </>
       )}
       </div>

@@ -61,10 +61,68 @@
   }
 }
 
+@keyframes anim-result-text {
+  0% {
+      font-size: 20px;
+  }
+  50% {
+    font-size: 80px;
+  }
+  100% {
+    font-size: 20px;
+  }
+}
+
+@keyframes anim-sun-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes anim-clouds-mooving {
+  0% {
+      left: 70%;
+  }
+  50% {
+      left: 0%;
+  }
+  100% {
+    left: 70%;
+  }
+}
+
 .play-page {
 
   .role{
     color: black;
+  }
+
+  .soleil{
+    background: url('/soleil.png') no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    right: 0;
+    left: 70%;
+    animation: anim-sun-rotate infinite 3s linear;
+  }
+
+  .nuages{
+    background: url('/nuages.png') no-repeat;
+    background-size: contain;
+    width: 180px;
+    height: 180px;
+    position: relative;
+    right: 0;
+    left: 70%;
+    top: -70%;
+    z-index: 1;
+    animation: anim-clouds-mooving infinite 15s linear
   }
 
   .Score{
@@ -79,6 +137,16 @@
     position: absolute;
     top: 0;
     border-bottom: 2vh solid black;
+  }
+
+  .result{
+    font-size: 20px;
+    text-align: center;
+    animation: anim-result-text infinite linear;
+    animation-duration: 2s;
+    position: relative;
+    z-index: 3;
+    top: -230%;
   }
 
   .Field{
@@ -97,6 +165,12 @@
   .restart{
     width: 20%;
     height: 50%;
+    position: relative;
+    top: -150%;
+  }
+  .restartText{
+    position: relative;
+    top: -160%;
   }
 
   .cage{
