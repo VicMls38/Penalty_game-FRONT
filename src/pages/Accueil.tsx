@@ -26,7 +26,7 @@ function Accueil() {
   return (
     <>
      <div className='AccueilScreen'>
-        <h1 className='PlayTitle'><a href='/game'>Play !</a></h1>
+        <h1 className='PlayTitle'><a href='/game'>Play !</a></h1><br />
         <p>Nombre de joueurs connectés : {playerCount}</p>
      </div>
     </>
