@@ -188,6 +188,7 @@
     top: 25%;
     margin-left: auto;
     margin-right: auto;
+    z-index: 2;
 
     .gardien {
       background-size: contain !important;
@@ -227,7 +228,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 2; 
+      z-index: 3; 
 
       a{
         margin-left: auto;
