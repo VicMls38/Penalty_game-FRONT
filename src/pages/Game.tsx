@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Score from '../components/score';
 import Playground from '../components/playground';
 import '../css/Game.css';
-import io from 'socket.io-client';
 import { socket } from '../main';
 
 interface MyData {
