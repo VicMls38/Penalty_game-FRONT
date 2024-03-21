@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
 import { socket } from '../main';
+import useSound from 'use-sound';
+
+import Soundsifflet from '/sounds/sifflet.mp3';
 
 function Playground() {
+
+  const [play, { stop }] = useSound(Soundsifflet); // Charger le son
+  const [shouldPlaySound, setShouldPlaySound] = useState(false);
+
   const [role, setRole] = useState(null);
   const [isGameOver, setGameOver] = useState(false);
   const [resultText, setResultText] = useState('');
@@ -31,6 +38,7 @@ function Playground() {
     socket.on('win', () => {
       setResultText("Gagné !");
       setGameOver(true);
+      setShouldPlaySound(true); // Activer la lecture du son
     });
     socket.on('loose', () => {
       setResultText("Perdu !");
@@ -49,11 +57,17 @@ function Playground() {
       setGameOver(false);
       window.location.reload();
     });
+    
+    if (shouldPlaySound) {
+      play();
+    } else {
+      stop();
+    }
 
     return () => {
       console.log('Role in cleanup:', role);
     };
-  }, []);
+  }, [shouldPlaySound, play, stop]);
 
   const handleClick = (choice: number) => {
     setChoixGardien(0)

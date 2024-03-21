@@ -12,7 +12,7 @@ import Game from './pages/Game.tsx'
 
 import { io } from 'socket.io-client'
 
-export const socket = io('http://localhost:5100');
+export const socket = io('https://penalty-game-back.onrender.com');
 
 const router = createBrowserRouter([
   {
