@@ -29,6 +29,7 @@ function Playground() {
     });
 
     socket.on("anim-end", (choixGardien, choixTireur) => {
+      navigator.vibrate(500);
       console.log('anim end socket event', choixGardien, choixTireur);
       
       setChoixGardien(choixGardien)
@@ -73,7 +74,6 @@ function Playground() {
   }/*, [shouldPlaySound, play, stop]*/);
 
   const handleClick = (choice: number) => {
-    navigator.vibrate(500);
     setChoixGardien(0)
     setChoixTireur(0)
     if (!isGameOver) {
