@@ -38,15 +38,18 @@ function Playground() {
     socket.on('win', () => {
       setResultText("Gagné !");
       setGameOver(true);
+      window.navigator.vibrate(500);
       //setShouldPlaySound(true); // Activer la lecture du son
     });
     socket.on('loose', () => {
       setResultText("Perdu !");
       setGameOver(true);
+      window.navigator.vibrate(500);
     });
     socket.on('egality', () => {
       setResultText("Egalité !");
       setGameOver(true);
+      window.navigator.vibrate(500);
     });
 
     socket.on('Restart?', (nbPlayerRestart) => {
