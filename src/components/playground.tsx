@@ -38,18 +38,18 @@ function Playground() {
     socket.on('win', () => {
       setResultText("Gagné !");
       setGameOver(true);
-      navigator.vibrate(500);
+      navigator.vibrate(1500);
       //setShouldPlaySound(true); // Activer la lecture du son
     });
     socket.on('loose', () => {
       setResultText("Perdu !");
       setGameOver(true);
-      navigator.vibrate(500);
+      navigator.vibrate(1500);
     });
     socket.on('egality', () => {
       setResultText("Egalité !");
       setGameOver(true);
-      navigator.vibrate(500);
+      navigator.vibrate(1500);
     });
 
     socket.on('Restart?', (nbPlayerRestart) => {
@@ -73,6 +73,7 @@ function Playground() {
   }/*, [shouldPlaySound, play, stop]*/);
 
   const handleClick = (choice: number) => {
+    navigator.vibrate(500);
     setChoixGardien(0)
     setChoixTireur(0)
     if (!isGameOver) {
